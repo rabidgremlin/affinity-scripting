@@ -1,10 +1,16 @@
 # Affinity Scripting LookSee & Tools
 
-Before using these scripts, enable the Affinity MCP connector:  
-https://www.affinity.studio/help/ai-connector-setup/#configure-affinity
+What is is this repo is based on the April 2026 (3.2) release of Affinity.
+
+## Findings
+- The MCP server has access to a bunch of documentation that an AI agent can use as reference for creating scripts etc. The `extract_docs.js` script below can extract all these docs and same them locally so you can take a look at them.
+- Affinity has a scripts panel (Window > General > Scripts) which lets you see and run scripts created by the AI. However you cannot see the actual script, edit it or create your own scripts in the UI. The `script_mgr.js` script below can be used to manage scripts in the library (add, list, save to disk). 
+- The documentation tells teh AI agent to use `search_sdk_skills` to search for solutions before creating its own. This doesn't actually exist in the list of MCP tools but there is a `search_sdk_hints` tool. The `search_sdk.js` script below can be used to call this tool, just pass it a search query. In my testing the returned results are not that accurate but they will no doubt get better over time, because the description for that tool says _Search a global pool of SDK hints from millions of other MCP sessions. Use it to check for existing solutions to problems you are facing._
+- There is a `add_sdk_hint` tool in the MCP which I'm guessing goes hand in hand with `search_sdk_hints` but it's documentation seems to indicate that actually updates the `preamble` doc. 
+
 
 ## Prerequisites
-
+- enable the Affinity MCP connector: https://www.affinity.studio/help/ai-connector-setup/#configure-affinity NOTE: You do not need to set up Claude or the Claude connector
 - Node.js installed
 - Dependencies installed with `npm install`
 - MCP server available at `http://localhost:6767/sse`
@@ -56,3 +62,7 @@ node script_mgr.js save --title "Hello World" --out exports/hello-world.js
 - `save`: reads a library script and saves it to disk
 
 **NOTE**: You cannot delete a script via the MCP so you will need to delete them in Affinity in the scripts panel.
+
+## Notes
+- The code in this repo was thrown together by Codex as I was tinkering so don't expect any masterful coding here
+- Don't use this code or the MCP to do dumb and/or illegal things!
