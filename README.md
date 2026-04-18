@@ -64,7 +64,9 @@ node script_mgr.js save --title "Hello World" --out exports/hello-world.js
 **NOTE**: You cannot delete a script via the MCP so you will need to delete them in Affinity in the scripts panel.
 
 ## Markdown import to text frame
-`markdown_import_to_text_frame.js` was written using Codex via the Affinity MCP. It imports a markdown file into the currently selected text frame, mapping markdown elements to Affinity text styles. You can test it by selecting a text frame in Affinity.
+`markdown_import_to_text_frame.js` was written using Codex via the Affinity MCP. It imports a markdown file into the currently selected text frame, mapping markdown elements to Affinity text styles. 
+
+You can test it by selecting a text frame in Affinity, running the script (by clicking on it in the scripts panel) and selecting a Markdown file when prompted. **Note**: The Markdown file must be on your desktop for the file picker to be able to select it.
 
 Install with
 
@@ -72,7 +74,7 @@ Install with
 node script_mgr.js add --title "Markdown import to selected text frame" --description  "Imports a Markdown file into the selected text frame" --file markdown_import_to_text_frame.js
 ```
 
-**Note**: The Markdown file must be on your desktop for the file picker to be able to select it.
+
 
 ## Using Codex with the Affinity MCP
 You need to register the Affinity MCP server with Codex. It does have issues accessing the MCP server over SSE so you need to proxy it via stdio.
