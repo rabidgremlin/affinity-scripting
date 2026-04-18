@@ -1,0 +1,14 @@
+{
+  "name": "extract_script_docs",
+  "version": "1.0.0",
+  "main": "extract_docs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
+}
