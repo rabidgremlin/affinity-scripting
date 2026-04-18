@@ -1,6 +1,6 @@
 # Affinity Scripting LookSee & Tools
 
-What is is this repo is based on the April 2026 (3.2) release of Affinity.
+What is in this repo is based on the April 2026 (3.2) release of Affinity.
 
 ## Findings
 - The MCP server has access to a bunch of documentation that an AI agent can use as reference for creating scripts etc. The `extract_docs.js` script below can extract all these docs and save them locally so you can take a look at them. This includes some example affinity scripts.
